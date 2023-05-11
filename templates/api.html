@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <!-- Adding Roboto and Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto:wght@300;400&display=swap"
+          rel="stylesheet">
+    <!--Add web.css to this HTML file.-->
+    <link rel="stylesheet" href="/static/web.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Add title to this HTML file.-->
+    <title>YouTube Transcript Summarizer | API</title>
+
+    <link href="/static/favicon.png" rel="icon">
+
+    
+
+</head>
+<body>
+<!--YouTube Logo Fetching From Online-->
+<img src="/static/yt_icon_rgb.svg" height="64" width="64" alt="YouTube Icon">
+<!--Titles-->
+<h1 style="font-weight: 300;">YouTube Transcript Summarizer</h1>
+<h3 style="font-family: 'Open Sans', sans-serif; font-weight: 300;">Get Summarization Done<br>Directly with our API.
+</h3>
+<!--Info Message to go to summarize or web endpoint-->
+<h5 style="font-weight: 400; line-height: 1.6">If you would like to try our API directly, request
+    our URL <u>https://ytsum.herokuapp.com/summarize/</u> with GET
+    Method.<br>The accepted arguments are <span style="font-weight: 300;"><b>[id, percent, choice]</b></span>
+    only as depicted in following dummy URL:
+</h5>
+<h3 style="font-family: 'Open Sans', sans-serif; font-weight: 300;">
+    https://ytsum.herokuapp.com/summarize/?id=<span style="font-weight: 400;"><b>your-video-id</b></span>&percent=<span
+        style="font-weight: 400;"><b>your-percent</b></span>&choice=<span style="font-weight: 400;"><b>your-summary-choice</b></span>
+</h3>
+<!--Help for the API-->
+<h5 style="font-weight: 400; line-height: 1.6">
+    <b><u>More Help</u></b><br>
+    You can also refer to our repository for more details regarding
+    <a href="https://github.com/AnujK2901/yt-sum-flask#sending-request-to-our-api">sending API request here</a>
+    and <a href="https://github.com/AnujK2901/yt-sum-flask#receiving-request-from-our-api">regarding receiving JSON
+    response here</a>.
+    <br>
+    Read about how you can find your YouTube video ID here :
+    <a href=" https://help.tcgplayer.com/hc/en-us/articles/115008106868-Finding-Your-YouTube-Video-ID">Link 1</a> |
+    <a href="https://gist.github.com/jakebellacera/d81bbf12b99448188f183141e6696817">Link 2</a>
+    <br>
+    <b>Tip:</b> Percentage could be of your choice, but optimal summaries are within 20 to 30 percent.
+</h5>
+You are requested to go <a href="/web/">here</a> to access online web summarizer.
+
+</body>
+</html>

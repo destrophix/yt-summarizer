@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <!-- Add Bootstrap CSS -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+    <!-- Adding Roboto and Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto:wght@300;400&display=swap"
+          rel="stylesheet">
+    <script src="https://kit.fontawesome.com/5f5cf45184.js" crossorigin="anonymous"></script>
+
+    <!--Add web.css to this HTML file.-->
+    <link rel="stylesheet" href="/static/web.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Add title to this HTML file.-->
+    <title>YouTube Transcript Summarizer | Web Summarizer</title>
+
+    <link href="/static/favicon.png" rel="icon">
+</head>
+<body>
+<!--YouTube Logo Fetching From Online-->
+<img src="/static/yt_icon_rgb.svg" height="64" width="64" alt="YouTube Icon">
+<!--Titles-->
+<h1 style="font-weight: 300;">YouTube Transcript Summarizer</h1>
+<h3 style="font-family: 'Open Sans', sans-serif; font-weight: 300;">Get Summarization Done<br>Directly within your
+    browser.</h3>
+<!--YouTube Div: Only Visible when it is YouTube URL-->
+<div id="youtube">
+    <input type="text" id="url_input" placeholder="YouTube Video URL">
+    <br>
+    <label for="url_input">Type YouTube Video URL here</label>
+
+    <!--Summary Choice Selection Dropdown-->
+    <div class="custom-select">
+        <select id="summary-dropdown" onchange="toggleModal(event)">
+            <option class="dropdown-text" value="0">Summary Algorithm</option>
+            <option class="dropdown-text" value="1">Text Rank Algorithm Based (Gensim)</option>
+            <option class="dropdown-text" value="2">Frequency Based (NLTK)</option>
+            <option class="dropdown-text" value="3">Frequency Based (Spacy)</option>
+            <option class="dropdown-text" value="4">Latent Semantic Analysis Based (Sumy)</option>
+            <option class="dropdown-text" value="5">Luhn Algorithm Based (Sumy)</option>
+            <option class="dropdown-text" value="6">Text Rank Algorithm Based (Sumy)</option>
+            <option class="dropdown-text" value="7">Custom Algorithm </option>
+        </select>
+        <br>
+        <label for="summary-dropdown">Choose Your Summarization Algorithm.<br>Tip: Use Text Rank Algorithm(Gensim)
+            if you don't know about these techniques.</label>
+    </div>
+    <!--Percent Selection Dropdown-->
+    <div class="custom-select" style="margin-top: -5px;">
+        <select id="percent-dropdown">
+            <option class="dropdown-text" value="0">Summary %</option>
+            <option class="dropdown-text" value="1">10%</option>
+            <option class="dropdown-text" value="2">20%</option>
+            <option class="dropdown-text" value="3">30%</option>
+            <option class="dropdown-text" value="4">40%</option>
+            <option class="dropdown-text" value="5">50%</option>
+            <option class="dropdown-text" value="6">60%</option>
+            <option class="dropdown-text" value="7">70%</option>
+        </select>
+        <br>
+        <label for="percent-dropdown">Select a percentage. (Tip: Select 20 or 30)<br>Summary will be presented in
+            approx. X% lines of the available transcript.</label>
+    </div>
+    <!--Button for Making Summarization Request-->
+    <button class="button" style="margin-top: -5px;" id="my_button" disabled><b>Summarize</b></button>
+</div>
+<!--Text Div: Summary Status and Response-->
+<div id="text_out_main" style="display: none;">
+    <h4 id="current_process">Generating Summary</h4>
+    <div id="text-out">Please Wait</div>
+    <button class="button" style="margin:auto; display: none" id="download_button"><b>Download Script</b></button>
+    <button class="button" style="margin:auto; display: none" id="hindi"><b>hindi</b></button>
+    
+    <h5 id="re_summarize" style="display: none;">
+        Click <a href="javascript:location.reload();">here</a> to summarize another video.</h5>
+</div>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <p>Some text in the Modal..</p>
+    </div>
+  
+  </div>
+
+<!-- Add bootstrap JS  -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script src="/static/web.js"></script>
+</body>
+</html>

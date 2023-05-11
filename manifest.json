@@ -1,0 +1,14 @@
+{
+    "name": "YT Summarizer",
+    "version": "1.0.0",
+    "description": "summarize youtube videos on educational domain",
+    "manifest_version": 3,
+    "author": "Amit Bhagat",
+    "action":{
+        "default_popup": "./templates/extension.html",
+        "default_title": "YT Summarizer"
+    },
+    "host_permissions": [
+        "http://127.0.0.1:5000/"
+      ]
+}
